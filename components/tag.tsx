@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { LucideIcon, UsersIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import React, { PropsWithChildren } from "react";
 
 type TagProps = PropsWithChildren & {

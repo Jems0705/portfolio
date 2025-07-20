@@ -1,7 +1,7 @@
 import { Tag } from "@/components/tag";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import {
     CalendarIcon,
     GithubIcon,
@@ -387,11 +387,11 @@ export default function Home() {
             <section className="py-20 px-6 bg-white">
                 <div className="container mx-auto text-center">
                     <h2 className="font-bold text-3xl mb-8">
-                        Let's Work Together
+                        Let&apos;s Work Together
                     </h2>
                     <p className="text-xl text-gray-600 mb-12">
-                        I'm always interested in discussing new opportunities
-                        and challenging projects.
+                        I&apos;m always interested in discussing new
+                        opportunities and challenging projects.
                     </p>
 
                     <div className="flex space-x-5 justify-center">

@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import {
     CalendarIcon,
     EyeIcon,
@@ -9,11 +10,12 @@ import {
     MailIcon,
     MapPinIcon,
     PhoneIcon,
-    PinIcon,
     UsersIcon,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+import Me from "@/assets/images/me.jpg";
 
 export default function Home() {
     return (
@@ -69,7 +71,7 @@ export default function Home() {
             <section id="#" className="py-20 px-6">
                 <div className="container mx-auto max-w-6xl">
                     <div className="grid grid-cols-3 gap-10">
-                        <div className="col-span-3 space-y-8">
+                        <div className="col-span-3 space-y-8 lg:col-span-2">
                             <div className="space-y-4">
                                 <h1 className="text-5xl font-bold mb-6 leading-tight">
                                     Web{" "}
@@ -143,15 +145,16 @@ export default function Home() {
                                 </Button>
                             </div>
                         </div>
-                        <Card className="p-5 col-span-3 flex flex-col items-center aspect-square">
-                            <div className="relative">
-                                <Image
-                                    src=""
-                                    alt="me"
-                                    className="rounded-2xl shadow-2xl"
-                                />
-                            </div>
-                        </Card>
+                        <div className="relative col-span-3 flex flex-col items-center lg:col-span-1 w-full max-w-md mx-auto">
+                            <Image
+                                src={Me}
+                                alt="me"
+                                width={400}
+                                height={500}
+                                className="rounded-2xl shadow-2xl object-cover"
+                                // fill
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -226,7 +229,7 @@ export default function Home() {
                                 neque! Rerum nobis quo delectus.
                             </p>
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-3 [&_span]:text-lg">
                             <Badge variant="outline">HTML</Badge>
                             <Badge variant="outline">CSS</Badge>
                             <Badge variant="outline">JavaScript</Badge>
@@ -255,260 +258,175 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* <section id="skills" className="py-20 px-6 bg-gray-50">
-                <div className="container mx-auto">
-                    <h2 className="font-bold text-3xl mb-8">
-                        Skills & Technologies
-                    </h2>
-
-                    <div className="space-y-3 space-x-3">
-                        <div className="p-6 bg-card text-card-foreground rounded-lg shadow-sm space-y-4">
-                            <h3 className="text-lg font-semibold">Frontend</h3>
-                            <ul className="space-y-2">
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        HTML
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        CSS
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        JavaScript
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        TypeScript
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Tailwind CSS
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Framer Motion
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        React.js
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Next.js
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="p-6 bg-card text-card-foreground rounded-lg shadow-sm space-y-4">
-                            <h3 className="text-lg font-semibold">Backend</h3>
-                            <ul className="space-y-2">
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Node.js
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Express.js
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        MySQL
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        PostgreSQL
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        MongoDB
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Drizzle ORM
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Supabase
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Neon
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        GraphQL
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="p-6 bg-card text-card-foreground rounded-lg shadow-sm space-y-4">
-                            <h3 className="text-lg font-semibold">Tools</h3>
-                            <ul className="space-y-2">
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Git
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        VS Code
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Jira
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Figma
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm font-medium text-gray-700">
-                                        Vercel
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-
-            <section className="py-20 px-6 bg-gray-50">
-                <div className="container mx-auto">
-                    <h2 className="font-bold text-3xl mb-8">
-                        Professional Experience
-                    </h2>
-
-                    <div className="space-y-8">
-                        <div className="p-6 bg-card text-card-foreground rounded-lg shadow-sm space-y-4">
-                            <div className="flex flex-col">
-                                <h3 className="text-xl font-semibold">
-                                    Web Development Associate
-                                </h3>
-                                <p className="text-blue-600 font-medium">
-                                    Company A
-                                </p>
-                                <span className="mt-1 text-sm text-gray-500">
-                                    Feb 2023 - Current
-                                </span>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Deserunt modi fugiat
-                                assumenda! Officia, deleniti qui optio aliquam
-                                vero excepturi tenetur beatae tempora aliquid
-                                maiores fuga, dolores porro sequi consequuntur
-                                natus!
+            <section id="#projects" className="py-20 px-6">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="space-y-16">
+                        <div className="space-y-4 text-center">
+                            <h2 className="text-4xl font-bold">Projects</h2>
+                            <p className="text-xl text-slate-600">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Vero ab exercitationem
+                                temporibus modi accusamus ipsam odio nam sed
+                                rem, hic iste ipsa ipsum, laudantium aperiam
+                                neque! Rerum nobis quo delectus.
                             </p>
+                        </div>
 
-                            <ul className="space-y-2">
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                                    <span className="text-sm text-gray-700">
-                                        lorem ipsumn dolor sit amet adipstsj.
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                                    <span className="text-sm text-gray-700">
-                                        lorem ipsumn dolor sit amet adipstsj.
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                                    <span className="text-sm text-gray-700">
-                                        lorem ipsumn dolor sit amet adipstsj.
-                                    </span>
-                                </li>
-                            </ul>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                            <div className="bg-card text-card-foreground rounded-lg shadow-lg">
+                                <div className="relative overflow-hidden rounded-t-lg">
+                                    <Image
+                                        src=""
+                                        alt=""
+                                        width={300}
+                                        height={200}
+                                        className="w-full object-cover"
+                                    />
+                                </div>
+                                <div className="space-y-1.5 p-6">
+                                    <h3 className="text-xl font-semibold">
+                                        Project A
+                                    </h3>
+                                    <p className="text-sm leading-relaxed text-slate-700">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Deserunt modi fugiat
+                                        assumenda! Officia, deleniti qui optio
+                                        aliquam vero excepturi tenetur beatae
+                                        tempora aliquid maiores fuga, dolores
+                                        porro sequi consequuntur natus!
+                                    </p>
+                                </div>
+                                <div className="p-6 pt-0 flex flex-wrap space-x-2">
+                                    <Badge>Next.js</Badge>
+                                    <Badge>Axios</Badge>
+                                    <Badge>Tanstack Query + Table</Badge>
+                                </div>
+                            </div>
+                            <div className="bg-card text-card-foreground rounded-lg shadow-lg">
+                                <div className="relative overflow-hidden rounded-t-lg">
+                                    <Image
+                                        src=""
+                                        alt=""
+                                        width={300}
+                                        height={200}
+                                        className="w-full object-cover"
+                                    />
+                                </div>
+                                <div className="space-y-1.5 p-6">
+                                    <h3 className="text-xl font-semibold">
+                                        Project A
+                                    </h3>
+                                    <p className="text-sm leading-relaxed text-slate-700">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Deserunt modi fugiat
+                                        assumenda! Officia, deleniti qui optio
+                                        aliquam vero excepturi tenetur beatae
+                                        tempora aliquid maiores fuga, dolores
+                                        porro sequi consequuntur natus!
+                                    </p>
+                                </div>
+                                <div className="p-6 pt-0 flex flex-wrap space-x-2">
+                                    <Badge>Next.js</Badge>
+                                    <Badge>Axios</Badge>
+                                    <Badge>Tanstack Query + Table</Badge>
+                                </div>
+                            </div>
+                            <div className="bg-card text-card-foreground rounded-lg shadow-lg">
+                                <div className="relative overflow-hidden rounded-t-lg">
+                                    <Image
+                                        src=""
+                                        alt=""
+                                        width={300}
+                                        height={200}
+                                        className="w-full object-cover"
+                                    />
+                                </div>
+                                <div className="space-y-1.5 p-6">
+                                    <h3 className="text-xl font-semibold">
+                                        Project A
+                                    </h3>
+                                    <p className="text-sm leading-relaxed text-slate-700">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Deserunt modi fugiat
+                                        assumenda! Officia, deleniti qui optio
+                                        aliquam vero excepturi tenetur beatae
+                                        tempora aliquid maiores fuga, dolores
+                                        porro sequi consequuntur natus!
+                                    </p>
+                                </div>
+                                <div className="p-6 pt-0 flex flex-wrap space-x-2">
+                                    <Badge>Next.js</Badge>
+                                    <Badge>Axios</Badge>
+                                    <Badge>Tanstack Query + Table</Badge>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="py-20 px-6 bg-white">
-                <div className="container mx-auto">
-                    <h2 className="font-bold text-3xl mb-8">Projects</h2>
-
-                    <div className="space-y-8">
-                        <div className="p-6 bg-card text-card-foreground rounded-lg shadow-sm space-y-4">
-                            <h3 className="text-xl font-semibold">Ydra</h3>
-                            <p className="text-gray-600">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Deserunt modi fugiat
-                                assumenda! Officia, deleniti qui optio aliquam
-                                vero excepturi tenetur beatae tempora aliquid
-                                maiores fuga, dolores porro sequi consequuntur
-                                natus!
+            <section id="#experience" className="py-20 px-6">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="space-y-16">
+                        <div className="space-y-4 text-center">
+                            <h2 className="text-4xl font-bold">
+                                Professional Experience
+                            </h2>
+                            <p className="text-xl text-slate-600">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Vero ab exercitationem
+                                temporibus modi accusamus ipsam odio nam sed
+                                rem, hic iste ipsa ipsum, laudantium aperiam
+                                neque! Rerum nobis quo delectus.
                             </p>
+                        </div>
 
-                            <div className="flex flex-wrap space-x-3">
-                                <Badge variant="secondary">React.js</Badge>
-                                <Badge variant="secondary">Typescript</Badge>
+                        <div className="space-y-8">
+                            <div className="p-6 bg-card text-card-foreground rounded-lg shadow-sm space-y-4">
+                                <div className="flex flex-col">
+                                    <h3 className="text-xl font-semibold">
+                                        Web Development Associate
+                                    </h3>
+                                    <p className="text-blue-600 font-medium">
+                                        Company A
+                                    </p>
+                                    <span className="mt-1 text-sm text-gray-500">
+                                        Feb 2023 - Current
+                                    </span>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Deserunt modi fugiat
+                                    assumenda! Officia, deleniti qui optio
+                                    aliquam vero excepturi tenetur beatae
+                                    tempora aliquid maiores fuga, dolores porro
+                                    sequi consequuntur natus!
+                                </p>
+
+                                <ul className="space-y-2">
+                                    <li className="flex items-center space-x-2">
+                                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                                        <span className="text-sm text-gray-700">
+                                            lorem ipsumn dolor sit amet
+                                            adipstsj.
+                                        </span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                                        <span className="text-sm text-gray-700">
+                                            lorem ipsumn dolor sit amet
+                                            adipstsj.
+                                        </span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                                        <span className="text-sm text-gray-700">
+                                            lorem ipsumn dolor sit amet
+                                            adipstsj.
+                                        </span>
+                                    </li>
+                                </ul>
                             </div>
-
-                            <ul className="space-y-2">
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm text-gray-700">
-                                        lorem ipsumn dolor sit amet adipstsj.
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm text-gray-700">
-                                        lorem ipsumn dolor sit amet adipstsj.
-                                    </span>
-                                </li>
-                                <li className="flex items-center space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                                    <span className="text-sm text-gray-700">
-                                        lorem ipsumn dolor sit amet adipstsj.
-                                    </span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -534,6 +452,18 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            <footer className="py-8 bg-primary">
+                <div className="container max-w-6xl mx-auto px-4">
+                    <span className="text-xl font-semibold text-primary-foreground">{`<DevJames />`}</span>
+                </div>
+                <Separator className="my-8 bg-border/35" />
+                <div className="container max-w-6xl mx-auto px-4">
+                    <p className="text-center text-primary-foreground/80">
+                        © 2025 James Santos. All rights reserved.
+                    </p>
+                </div>
+            </footer>
         </main>
     );
 }

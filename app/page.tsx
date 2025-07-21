@@ -151,7 +151,7 @@ export default function Home() {
                                 alt="me"
                                 width={400}
                                 height={500}
-                                className="rounded-2xl shadow-2xl object-cover"
+                                className="rounded-2xl shadow-2xl object-cover -z-10"
                                 // fill
                             />
                         </div>
@@ -296,7 +296,7 @@ export default function Home() {
                                         porro sequi consequuntur natus!
                                     </p>
                                 </div>
-                                <div className="p-6 pt-0 flex flex-wrap space-x-2">
+                                <div className="p-6 pt-0 flex flex-wrap gap-2">
                                     <Badge>Next.js</Badge>
                                     <Badge>Axios</Badge>
                                     <Badge>Tanstack Query + Table</Badge>
@@ -325,7 +325,7 @@ export default function Home() {
                                         porro sequi consequuntur natus!
                                     </p>
                                 </div>
-                                <div className="p-6 pt-0 flex flex-wrap space-x-2">
+                                <div className="p-6 pt-0 flex flex-wrap gap-2">
                                     <Badge>Next.js</Badge>
                                     <Badge>Axios</Badge>
                                     <Badge>Tanstack Query + Table</Badge>
@@ -354,7 +354,7 @@ export default function Home() {
                                         porro sequi consequuntur natus!
                                     </p>
                                 </div>
-                                <div className="p-6 pt-0 flex flex-wrap space-x-2">
+                                <div className="p-6 pt-0 flex flex-wrap gap-2">
                                     <Badge>Next.js</Badge>
                                     <Badge>Axios</Badge>
                                     <Badge>Tanstack Query + Table</Badge>

@@ -16,11 +16,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Me from "@/assets/images/me.jpg";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
     return (
         <main className="min-h-screen">
-            <header className="p-4 border-b sticky top-0 bg-white/80 backdrop-blur-md">
+            <header className="p-4 z-10 border-b sticky top-0 bg-white/80 backdrop-blur-md dark:bg-primary/5">
                 <div className="container mx-auto flex justify-between items-center">
                     <span className="text-xl font-semibold">{`<DevJames />`}</span>
                     <nav className="hidden md:block">
@@ -63,12 +64,19 @@ export default function Home() {
                                     <Link href="contact">Hire Me</Link>
                                 </Button>
                             </li>
+
+                            <li>
+                                <ModeToggle />
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </header>
 
-            <section id="#" className="py-20 px-6">
+            <section
+                id="#"
+                className="py-20 px-6 bg-gray-50 dark:bg-primary-foreground"
+            >
                 <div className="container mx-auto max-w-6xl">
                     <div className="grid grid-cols-3 gap-10">
                         <div className="col-span-3 space-y-8 lg:col-span-2">
@@ -151,7 +159,7 @@ export default function Home() {
                                 alt="me"
                                 width={400}
                                 height={500}
-                                className="rounded-2xl shadow-2xl object-cover -z-10"
+                                className="rounded-2xl shadow-2xl object-cover"
                                 // fill
                             />
                         </div>
@@ -164,7 +172,7 @@ export default function Home() {
                     <div className="space-y-16">
                         <div className="space-y-4 text-center">
                             <h2 className="text-4xl font-bold">About</h2>
-                            <p className="text-xl text-slate-600">
+                            <p className="text-xl text-slate-600 dark:text-slate-400">
                                 Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Vero ab exercitationem
                                 temporibus modi accusamus ipsam odio nam sed
@@ -172,7 +180,7 @@ export default function Home() {
                                 neque! Rerum nobis quo delectus.
                             </p>
                         </div>
-                        <div className="space-y-6 [&_p]:leading-relaxed [&_p]:text-lg [&_p]:text-slate-600">
+                        <div className="space-y-6 [&_p]:leading-relaxed [&_p]:text-lg [&_p]:text-slate-600 [&_p]:dark:text-slate-400">
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Omnis quod perspiciatis,
@@ -191,7 +199,7 @@ export default function Home() {
                                 perferendis voluptates quod!
                             </p>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 [&_svg]:text-blue-600 [&_svg]:w-5 [&_svg]:h-5 [&_span]:text-slate-600">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 [&_svg]:text-blue-400 [&_svg]:w-5 [&_svg]:h-5 [&_span]:text-slate-600 [&_span]:dark:text-slate-400">
                                 <div className="flex item-center space-x-2 text-sm">
                                     <MapPinIcon />
                                     <span>Marikina City</span>
@@ -214,14 +222,17 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="#skills" className="py-20 px-6">
+            <section
+                id="#skills"
+                className="py-20 px-6 bg-gray-50 dark:bg-primary-foreground"
+            >
                 <div className="container mx-auto max-w-6xl">
                     <div className="space-y-16">
                         <div className="space-y-4 text-center">
                             <h2 className="text-4xl font-bold">
                                 Skills & Technologies
                             </h2>
-                            <p className="text-xl text-slate-600">
+                            <p className="text-xl text-slate-600 dark:text-slate-400">
                                 Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Vero ab exercitationem
                                 temporibus modi accusamus ipsam odio nam sed
@@ -263,7 +274,7 @@ export default function Home() {
                     <div className="space-y-16">
                         <div className="space-y-4 text-center">
                             <h2 className="text-4xl font-bold">Projects</h2>
-                            <p className="text-xl text-slate-600">
+                            <p className="text-xl text-slate-600 dark:text-slate-400">
                                 Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Vero ab exercitationem
                                 temporibus modi accusamus ipsam odio nam sed
@@ -287,7 +298,7 @@ export default function Home() {
                                     <h3 className="text-xl font-semibold">
                                         Project A
                                     </h3>
-                                    <p className="text-sm leading-relaxed text-slate-700">
+                                    <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing elit. Deserunt modi fugiat
                                         assumenda! Officia, deleniti qui optio
@@ -316,7 +327,7 @@ export default function Home() {
                                     <h3 className="text-xl font-semibold">
                                         Project A
                                     </h3>
-                                    <p className="text-sm leading-relaxed text-slate-700">
+                                    <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing elit. Deserunt modi fugiat
                                         assumenda! Officia, deleniti qui optio
@@ -345,7 +356,7 @@ export default function Home() {
                                     <h3 className="text-xl font-semibold">
                                         Project A
                                     </h3>
-                                    <p className="text-sm leading-relaxed text-slate-700">
+                                    <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                                         Lorem ipsum dolor sit amet consectetur
                                         adipisicing elit. Deserunt modi fugiat
                                         assumenda! Officia, deleniti qui optio
@@ -365,14 +376,17 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="#experience" className="py-20 px-6">
+            <section
+                id="#experience"
+                className="py-20 px-6 bg-gray-50 dark:bg-primary-foreground"
+            >
                 <div className="container mx-auto max-w-6xl">
                     <div className="space-y-16">
                         <div className="space-y-4 text-center">
                             <h2 className="text-4xl font-bold">
                                 Professional Experience
                             </h2>
-                            <p className="text-xl text-slate-600">
+                            <p className="text-xl text-slate-600 dark:text-slate-400">
                                 Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Vero ab exercitationem
                                 temporibus modi accusamus ipsam odio nam sed
@@ -387,14 +401,14 @@ export default function Home() {
                                     <h3 className="text-xl font-semibold">
                                         Web Development Associate
                                     </h3>
-                                    <p className="text-blue-600 font-medium">
+                                    <p className="text-blue-600 font-medium dark:text-blue-400">
                                         Company A
                                     </p>
-                                    <span className="mt-1 text-sm text-gray-500">
+                                    <span className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                                         Feb 2023 - Current
                                     </span>
                                 </div>
-                                <p>
+                                <p className="text-slate-600 dark:text-slate-400">
                                     Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit. Deserunt modi fugiat
                                     assumenda! Officia, deleniti qui optio
@@ -405,22 +419,22 @@ export default function Home() {
 
                                 <ul className="space-y-2">
                                     <li className="flex items-center space-x-2">
-                                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                                        <span className="text-sm text-gray-700">
+                                        <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                                        <span className="text-sm text-slate-600 dark:text-slate-400">
                                             lorem ipsumn dolor sit amet
                                             adipstsj.
                                         </span>
                                     </li>
                                     <li className="flex items-center space-x-2">
-                                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                                        <span className="text-sm text-gray-700">
+                                        <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                                        <span className="text-sm text-slate-600 dark:text-slate-400">
                                             lorem ipsumn dolor sit amet
                                             adipstsj.
                                         </span>
                                     </li>
                                     <li className="flex items-center space-x-2">
-                                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                                        <span className="text-sm text-gray-700">
+                                        <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                                        <span className="text-sm text-slate-600 dark:text-slate-400">
                                             lorem ipsumn dolor sit amet
                                             adipstsj.
                                         </span>
@@ -432,12 +446,12 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="py-20 px-6 bg-white">
+            <section className="py-20 px-6">
                 <div className="container mx-auto text-center">
                     <h2 className="font-bold text-3xl mb-8">
                         Let&apos;s Work Together
                     </h2>
-                    <p className="text-xl text-gray-600 mb-12">
+                    <p className="text-xl text-slate-600 dark:text-slate-400 mb-12">
                         I&apos;m always interested in discussing new
                         opportunities and challenging projects.
                     </p>
@@ -453,7 +467,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <footer className="py-8 bg-primary">
+            <footer className="py-8 bg-primary ">
                 <div className="container max-w-6xl mx-auto px-4">
                     <span className="text-xl font-semibold text-primary-foreground">{`<DevJames />`}</span>
                 </div>
